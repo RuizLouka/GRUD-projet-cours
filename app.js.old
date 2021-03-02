@@ -1,0 +1,27 @@
+const express = require('express');
+const bodyParser = require('body-parser')
+
+const app = express()
+
+// on peut utiliser l'objet next avec request & reponse si on a plusieurs use
+app.use('/api/user',(_request, response) => {
+  const user = [
+    {
+      _id: '1',
+      firstName: 'Hugo',
+      lastName: 'CELDRAN',
+      userName: 'dauphin',
+      mail: 'mailencarton@gmail.com',
+      role: 'Administratreur',
+      civilite: 'M',
+      photo: 'lien_photo',
+      dateNaissance: '17/03/1998',
+      location: {
+        lattitude: 1,
+        longitude: 1
+      },
+    },
+  ];
+  console.log('ok')
+  response.status(200);
+});
