@@ -9,11 +9,9 @@ app.use(bodyParser.json());
 
 // transforme url
 app.use(bodyParser.urlencoded({ extended: true }));
-// app use .static
 
-// app.get('/users', (request, response) => {
-//     response.json({ message: 'Bienvenue' })
-// });
+// app use .static
+app.use(express.static('public'));
 
 const userRoutes = require('./app/routes/userRoute');
 app.use('/users', userRoutes());
